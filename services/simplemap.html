@@ -24,7 +24,7 @@
     <script>
       let mapvar;
 <!-- the wordnew creats the map itslef -->
-  <!-- Map is a constructor, and there is two optons here :center and zoom -->
+  <!-- MMap is a constructor, and there is two optons here :center and zoom -->
   <!-- tthis uses a lat long literal-->
       function initMap() {
         mapvar = new google.maps.Map(document.getElementById("mapid"), {
@@ -35,7 +35,7 @@
     </script>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="mapid"></div>
     
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <!-- *** STUDENTS: Replace YOUR_API_KEY text with provided key in class for property src in next line *** -->
