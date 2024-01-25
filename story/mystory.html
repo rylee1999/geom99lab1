@@ -1,7 +1,16 @@
 <html>
   <head>
     <title>Simple Map</title>
-    <style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap"
+      defer>
+    </script>
+      <script type="module" src="./index.js"></script>
+    
+   <style>
  
 #map {
   height: 100%;
@@ -14,13 +23,11 @@ body {
   padding: 0;
 }
  </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.js"></script>
+  
   </head>
   <body>
     <div id="map"></div>
-  src = "AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE"
+  
    
   </body>
 </html>
