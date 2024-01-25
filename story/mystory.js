@@ -31,6 +31,15 @@ async function initMap() {
   const pinBackground = new PinElement({
     background: "#FBBC04",
   });
+   const markerViewWithText = new AdvancedMarkerElement({
+    map,
+    position: { lat: 44.144, lng: -78.62 },
+    title: "Ballyduff Tallgrass Praire",
+  });
+  // Adjust the scale.
+  const pinScaled = new PinElement({
+    scale: 1.5,
+  });
   const markerViewBackground = new AdvancedMarkerElement({
     map,
     position: { lat: 37.419, lng: -122.01 },
@@ -54,15 +63,6 @@ async function initMap() {
     position: { lat: 37.415, lng: -122.02 },
     content: pinGlyph.element,
   });
-  // Hide the glyph.
-  const pinNoGlyph = new PinElement({
-    glyph: "",
-  });
-  const markerViewNoGlyph = new AdvancedMarkerElement({
-    map,
-    position: { lat: 44.144, lng: -78.621 }, 
-    content: pinNoGlyph.element,
-  });
-}
+  
 
 initMap();
