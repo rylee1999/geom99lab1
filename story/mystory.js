@@ -15,8 +15,8 @@ async function initMap() {
   // Default marker with title text (no PinElement).
   const markerViewWithText = new AdvancedMarkerElement({
     map,
-    position: { lat: 37.419, lng: -122.03 },
-    title: "Title text for the marker at lat: 37.419, lng: -122.03",
+    position: { lat: 44.402, lng: -78.759 },
+    title: "Ken Reid Conservation Area",
   });
   // Adjust the scale.
   const pinScaled = new PinElement({
@@ -24,7 +24,7 @@ async function initMap() {
   });
   const markerViewScaled = new AdvancedMarkerElement({
     map,
-    position: { lat: 37.419, lng: -122.02 },
+    position: { lat: 44.340, lng: -78.535 }, 
     content: pinScaled.element,
   });
   // Change the background color.
