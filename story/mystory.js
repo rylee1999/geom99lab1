@@ -22,6 +22,7 @@ async function initMap() {
   const pinScaled = new PinElement({
     scale: 1.5,
   });
+  // emily park.
   const markerViewScaled = new AdvancedMarkerElement({
     map,
     position: { lat: 44.340, lng: -78.535 }, 
@@ -31,29 +32,24 @@ async function initMap() {
   const pinBackground = new PinElement({
     background: "#FBBC04",
   });
-   const markerViewWithText = new AdvancedMarkerElement({
-    map,
-    position: { lat: 44.144, lng: -78.62 },
-    title: "Ballyduff Tallgrass Praire",
-  });
-  // Adjust the scale.
-  const pinScaled = new PinElement({
-    scale: 1.5,
-  });
-  const markerViewBackground = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.01 },
-    content: pinBackground.element,
-  });
-  // Change the border color.
-  const pinBorder = new PinElement({
-    borderColor: "#137333",
-  });
+   // balsam lake.
   const markerViewBorder = new AdvancedMarkerElement({
     map,
     position: { lat: 44.626, lng: -78.865}, 
     content: pinBorder.element,
   });
+  
+  // Change the border color.
+  const pinBorder = new PinElement({
+    borderColor: "#137333",
+  });
+  // balsam lake.
+  const markerViewBorder = new AdvancedMarkerElement({
+    map,
+    position: { lat: 44.626, lng: -78.865}, 
+    content: pinBorder.element,
+  });
+ 
   // Change the glyph color.
   const pinGlyph = new PinElement({
     glyphColor: "white",
@@ -63,6 +59,6 @@ async function initMap() {
     position: { lat: 37.415, lng: -122.02 },
     content: pinGlyph.element,
   });
-  
+}
 
 initMap();
