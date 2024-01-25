@@ -60,7 +60,7 @@ async function initMap() {
   });
   const markerViewNoGlyph = new AdvancedMarkerElement({
     map,
-    position: { lat: 44.334, lng: -78.551 }, 
+    position: { lat: 444.144, lng: -78.621 }, 
     content: pinNoGlyph.element,
   });
 }
