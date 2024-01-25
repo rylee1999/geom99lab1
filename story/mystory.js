@@ -8,7 +8,7 @@ async function initMap() {
   );
   const map = new Map(document.getElementById("map"), {
     center: { lat: 44.402, lng: -78.759 }, 
-    zoom: 14,
+    zoom: 8,
     mapId: "4504f8b37365c3d0",
   });
   // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
@@ -42,7 +42,7 @@ async function initMap() {
   });
   const markerViewBorder = new AdvancedMarkerElement({
     map,
-    position: { lat: 37.415, lng: -122.03 },
+    position: { lat: 44.626, lng: -78.865}, 
     content: pinBorder.element,
   });
   // Change the glyph color.
@@ -60,7 +60,7 @@ async function initMap() {
   });
   const markerViewNoGlyph = new AdvancedMarkerElement({
     map,
-    position: { lat: 37.415, lng: -122.01 },
+    position: { lat: 44.334, lng: -78.551 }, 
     content: pinNoGlyph.element,
   });
 }
