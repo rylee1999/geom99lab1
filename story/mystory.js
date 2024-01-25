@@ -38,15 +38,15 @@ async function initMap() {
     position: { lat: 44.626, lng: -78.865}, 
     content: pinBorder.element,
   });
-  
-  // Change the border color.
-  const pinBorder = new PinElement({
-    borderColor: "#137333",
+  // Change the glyph color.
+  const pinGlyph = new PinElement({
+    glyphColor: "white",
   });
-  // balsam lake.
+  
+  // ballyduff
   const markerViewBorder = new AdvancedMarkerElement({
     map,
-    position: { lat: 44.626, lng: -78.865}, 
+    position: { lat: 444.143, lng: -78.621}, 
     content: pinBorder.element,
   });
  
@@ -54,11 +54,7 @@ async function initMap() {
   const pinGlyph = new PinElement({
     glyphColor: "white",
   });
-  const markerViewGlyph = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.415, lng: -122.02 },
-    content: pinGlyph.element,
-  });
+ 
 }
 
 initMap();
