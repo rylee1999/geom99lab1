@@ -1,12 +1,16 @@
-let map;
+function initMap() {
+  const myLatLng = { lat: 44.407, lng: -78.759 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: myLatLng,
+  });
 
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-
-  map = new Map(document.getElementById("map"), {
-    center: { lat: 44.407, lng: -78.759 }, 
-    zoom: 8,
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Kein Reid",
   });
 }
 
-initMap();
+window.initMap = initMap;
+
