@@ -3,18 +3,18 @@
 // Australia which was made by Charles Kingsford Smith.
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
+    zoom: 4,
     center: { lat:52.299, lng: -0.943},
     mapTypeId: "terrain",
   });
-  const flightPlanCoordinates = [
+  const RyleesflightPathCoordinates = [
     { lat: 64.797, lng: -17.117 },
     { lat: 55.953, lng: -3.185 }, 
     { lat: 47.185, lng: 9.683 },
     { lat: 51.152, lng: 14.968 }, 
   ];
   const flightPath = new google.maps.Polyline({
-    path: flightPlanCoordinates,
+    path: RyleesflightPathCoordinates,
     geodesic: true,
     strokeColor: "#FF0000",
     strokeOpacity: 1.0,
@@ -22,6 +22,32 @@ function initMap() {
   });
 
   flightPath.setMap(map);
+  const tourStops = [
+    [{ lat: 64.797, lng: -17.117  }, "Boynton Pass"],
+    [{  lat: 55.953, lng: -3.185  }, "Airport Mesa"],
+    [{ lat: 47.185, lng: 9.683  }, "Chapel of the Holy Cross"],
+    [{ lat: 51.152, lng: 14.968 }, "Red Rock Crossing"],
+  ];
+  // Create an info window to share between markers.
+  const infoWindow = new google.maps.InfoWindow();
+
+  // Create the markers.
+  tourStops.forEach(([position, title], i) => {
+    const marker = new google.maps.Marker({
+      position,
+      map,
+      title: `${i + 1}. ${title}`,
+      label: `${i + 1}`,
+      optimized: false,
+    });
+
+    // Add a click listener for each marker, and set up the info window.
+    marker.addListener("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(marker.getTitle());
+      infoWindow.open(marker.getMap(), marker);
+    });
+  });
 }
 
 window.initMap = initMap;
