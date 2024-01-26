@@ -1,33 +1,32 @@
-// The following example creates five accessible and
-// focusable markers.
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: { lat: 34.84555, lng: -111.8035 },
-  });
-  // Set LatLng and title text for the markers. The first marker (Boynton Pass)
-  // receives the initial focus when tab is pressed. Use arrow keys to
-  // move between markers; press tab again to cycle through the map controls.
-  const tourStops = [
-    [{ lat: 34.8791806, lng: -111.8265049 }, "Boynton Pass"],
-    [{ lat: 34.8559195, lng: -111.7988186 }, "Airport Mesa"],
-    [{ lat: 34.832149, lng: -111.7695277 }, "Chapel of the Holy Cross"],
-    [{ lat: 34.823736, lng: -111.8001857 }, "Red Rock Crossing"],
-    [{ lat: 34.800326, lng: -111.7665047 }, "Bell Rock"],
-  ];
-  
-// Create an info window to share between markers.
-  const infoWindow = new google.maps.InfoWindow();
+const parser = new DOMParser();
 
-  // Create the markers.
-  tourStops.forEach(([position, title], i) => {
-    const marker = new google.maps.Marker({
-      position,
-      map,
-      title: `${i + 1}. ${title}`,
-      label: `${i + 1}`,
-      optimized: false,
-    });
-    }
+async function initMap() {
+  // Request needed libraries.
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+    "marker",
+  );
+  const map = new Map(document.getElementById("map"), {
+    center: { lat: 37.419, lng: -122.02 },
+    zoom: 14,
+    mapId: "4504f8b37365c3d0",
+  });
+  // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
+  // Default marker with title text (no PinElement).
+  const markerViewWithText = new AdvancedMarkerElement({
+    map,
+    position: { lat: 37.419, lng: -122.03 },
+    title: "Title text for the marker at lat: 37.419, lng: -122.03",
+  });
+   // Change the glyph color.
+  const pinGlyph = new PinElement({
+    glyphColor: "white",
+  });
+  const markerViewGlyph = new AdvancedMarkerElement({
+    map,
+    position: { lat: 37.415, lng: -122.02 },
+    content: pinGlyph.element,
+  });
+}
 
 window.initMap = initMap;
