@@ -19,15 +19,6 @@ async function initMap() {
     title: "Title text for the marker at lat: 37.419, lng: -122.03",
   });
  
-  // Change the background color.
-  const pinBackground = new PinElement({
-    background: "#FBBC04",
-  });
-  const markerViewBackground = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.01 },
-    content: pinBackground.element,
-  });
   // Change the border color.
   const pinBorder = new PinElement({
     borderColor: "#137333",
