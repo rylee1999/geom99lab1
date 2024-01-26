@@ -22,6 +22,24 @@ async function initMap() {
   const pinScaled = new PinElement({
     scale: 1.5,
   });
+   const markerViewBorder = new AdvancedMarkerElement({
+    map,
+    position: { lat: 44.143, lng: -78.621 },
+    content: pinBorder.element,
+  });
+  // Change the glyph color.
+  const pinGlyph = new PinElement({
+    glyphColor: "white",
+  });
+  const markerViewBorder = new AdvancedMarkerElement({
+    map,
+    position: { lat: 44.340, lng: -78.535 },
+    content: pinBorder.element,
+  });
+  // Change the glyph color.
+  const pinGlyph = new PinElement({
+    glyphColor: "white",
+  }); 
    const markerViewScaled = new AdvancedMarkerElement({
     map,
     position: { lat: 37.419, lng: -122.02 },
@@ -40,15 +58,7 @@ async function initMap() {
   const pinBorder = new PinElement({
     borderColor: "#137333",
   });
-  const markerViewBorder = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.415, lng: -122.03 },
-    content: pinBorder.element,
-  });
-  // Change the glyph color.
-  const pinGlyph = new PinElement({
-    glyphColor: "white",
-  });
+ 
   const markerViewGlyph = new AdvancedMarkerElement({
     map,
     position: { lat: 37.415, lng: -122.02 },
