@@ -15,7 +15,7 @@ async function initMap() {
   // Default marker with title text (no PinElement).
   const markerViewWithText = new AdvancedMarkerElement({
     map,
-    position: { lat: 344.426, lng: -78.743 },
+    position: { lat: 44.426, lng: -78.743 },
     title: "Ken Reid Conservation Area",
   });
   
