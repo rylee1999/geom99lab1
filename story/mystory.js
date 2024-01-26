@@ -20,13 +20,16 @@ function initMap() {
   const infoWindow = new google.maps.InfoWindow();
 
   // Create the markers.
+   const pinGlyph = new PinElement({
+    glyphColor: "white",
+  });
   tourStops.forEach(([position, title], i) => {
-    const marker = new google.maps.Marker({
+   const markerViewGlyph = new AdvancedMarkerElement({
       position,
       map,
       title: `${i + 1}. ${title}`,
-      label: `${i + 1}`,
       optimized: false,
+      content: pinGlyph.element,
     });
 
     // Add a click listener for each marker, and set up the info window.
