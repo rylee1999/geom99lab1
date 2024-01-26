@@ -22,15 +22,6 @@ function initMap() {
     strokeWeight: 2,
   });
 
-   const image =
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-  const beachMarker = new google.maps.Marker({
-    position: {lat: 44.449, lng: -78.805 },
-    map,
-    icon: image,
-    title: "My Home!",
-  });
-    
   
   flightPath.setMap(map);
   const RyleestourStops = [
