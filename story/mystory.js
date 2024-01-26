@@ -12,6 +12,7 @@ function initMap() {
     { lat: 55.953, lng: -3.185 }, 
     { lat: 47.185, lng: 9.683 },
     { lat: 51.152, lng: 14.968 }, 
+    { lat: 36.398, lng: 25.458  },
   ];
   const flightPath = new google.maps.Polyline({
     path: RyleesflightPathCoordinates,
@@ -27,6 +28,7 @@ function initMap() {
     [{  lat: 55.953, lng: -3.185  }, "Edinburgh, Scotland"],
     [{ lat: 47.185, lng: 9.683  }, "Liechtenstein, Switzerland"],
     [{ lat: 51.152, lng: 14.968 }, "Görlitz, Germany"],
+    [{ lat: 36.398, lng: 25.458 }, "Santorini, Greece"],
   ];
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
