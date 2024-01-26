@@ -13,21 +13,7 @@ async function initMap() {
   });
   // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
   // Default marker with title text (no PinElement).
-  const markerViewWithText = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.03 },
-    title: "Title text for the marker at lat: 37.419, lng: -122.03",
-  });
- 
-  // Change the border color.
-  const pinBorder = new PinElement({
-    borderColor: "#137333",
-  });
-  const markerViewBorder = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.415, lng: -122.03 },
-    content: pinBorder.element,
-  });
+
   // Change the glyph color.
   const pinGlyph = new PinElement({
     glyphColor: "white",
