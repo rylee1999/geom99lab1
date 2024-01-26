@@ -21,12 +21,17 @@ function initMap() {
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
-  new google.maps.Marker({
-    position:{ lat: 37.419, lng: -122.02 },
+
+   const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+  const beachMarker = new google.maps.Marker({
+    position: {lat: 44.449, lng: -78.805 },
     map,
+    icon: image,
     title: "My Home!",
   });
-
+    
+  
   flightPath.setMap(map);
   const RyleestourStops = [
     [{ lat: 64.797, lng: -17.117  }, "Vatnajökull National Park, Iceland"],
