@@ -21,6 +21,11 @@ function initMap() {
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
+  new google.maps.Marker({
+    position:{ lat: 37.419, lng: -122.02 },
+    map,
+    title: "My Home!",
+  });
 
   flightPath.setMap(map);
   const RyleestourStops = [
