@@ -18,61 +18,40 @@ async function initMap() {
     position: { lat: 44.402, lng: -78.759 },
     title: "Ken Reid Conservation Area",
   });
-  // Adjust the scale.
-  const pinScaled = new PinElement({
-    scale: 1.5,
-  });
-   const markerViewBorder = new AdvancedMarkerElement({
-    map,
-    position: { lat: 44.143, lng: -78.621 },
-    content: pinBorder.element,
-  });
+ //emily.
   // Change the glyph color.
   const pinGlyph = new PinElement({
     glyphColor: "white",
-  });
-  const markerViewBorder = new AdvancedMarkerElement({
-    map,
-    position: { lat: 44.340, lng: -78.535 },
-    content: pinBorder.element,
-  });
-  // Change the glyph color.
-  const pinGlyph = new PinElement({
-    glyphColor: "white",
-  }); 
-   const markerViewScaled = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.02 },
-    content: pinScaled.element,
-  });
-  // Change the background color.
-  const pinBackground = new PinElement({
-    background: "#FBBC04",
-  });
-  const markerViewBackground = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.01 },
-    content: pinBackground.element,
-  });
-  // Change the border color.
-  const pinBorder = new PinElement({
-    borderColor: "#137333",
   });
  
   const markerViewGlyph = new AdvancedMarkerElement({
     map,
-    position: { lat: 37.415, lng: -122.02 },
+    position: { lat: 44.340, lng: -78.535 }, 
     content: pinGlyph.element,
   });
-  // Hide the glyph.
-  const pinNoGlyph = new PinElement({
-    glyph: "",
+  //balleyduf.
+  // Change the glyph color.
+  const pinGlyph = new PinElement({
+    glyphColor: "white",
   });
-  const markerViewNoGlyph = new AdvancedMarkerElement({
+ 
+  const markerViewGlyph = new AdvancedMarkerElement({
     map,
-    position: { lat: 37.415, lng: -122.01 },
-    content: pinNoGlyph.element,
+    position: { lat: 44.143, lng: 78.621 },
+    content: pinGlyph.element,
   });
+  //balsam.
+  // Change the glyph color.
+  const pinGlyph = new PinElement({
+    glyphColor: "white",
+  });
+ 
+  const markerViewGlyph = new AdvancedMarkerElement({
+    map,
+    position: { lat: 44.625, lng: -78.864 }, 
+    content: pinGlyph.element,
+  });
+  
 }
 
 initMap();
