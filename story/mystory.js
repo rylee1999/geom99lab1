@@ -33,10 +33,7 @@ function initMap() {
 
   // Create the markers.
   RyleestourStops.forEach(([position, title], i) => {
-    const pinBackground = new PinElement({
-      background: "#FBBC04",
-      });
-    const markerViewBackground = new AdvancedMarkerElement({
+    const marker = new google.maps.Marker({
       position,
       map,
       title: `${i + 1}. ${title}`,
