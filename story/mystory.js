@@ -3,7 +3,7 @@
 // Australia which was made by Charles Kingsford Smith.
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
+    zoom: 2,
     center: { lat:52.299, lng: -0.943},
     mapTypeId: "terrain",
   });
@@ -23,10 +23,10 @@ function initMap() {
 
   flightPath.setMap(map);
   const tourStops = [
-    [{ lat: 64.797, lng: -17.117  }, "Boynton Pass"],
-    [{  lat: 55.953, lng: -3.185  }, "Airport Mesa"],
-    [{ lat: 47.185, lng: 9.683  }, "Chapel of the Holy Cross"],
-    [{ lat: 51.152, lng: 14.968 }, "Red Rock Crossing"],
+    [{ lat: 64.797, lng: -17.117  }, "Görlitz, Germany"],
+    [{  lat: 55.953, lng: -3.185  }, "Edinburgh, Scotland"],
+    [{ lat: 47.185, lng: 9.683  }, "Liechtenstein, Switzerland"],
+    [{ lat: 51.152, lng: 14.968 }, "Vatnajökull National Park, Iceland"],
   ];
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
