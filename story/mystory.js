@@ -39,6 +39,7 @@ function initMap() {
       title: `${i + 1}. ${title}`,
       label: `${i + 1}`,
       optimized: false,
+      fillColor:#FFD700,
     });
 
     // Add a click listener for each marker, and set up the info window.
