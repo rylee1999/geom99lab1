@@ -37,7 +37,7 @@ async function initMap() {
  
   const markerViewGlyph = new AdvancedMarkerElement({
     map,
-    position: { lat: 44.143, lng: 78.621 },
+    position: { lat: 44.143, lng: -78.621 },
     content: pinGlyph.element,
   });
   //balsam.
