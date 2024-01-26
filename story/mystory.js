@@ -1,5 +1,6 @@
 //code template codes from:https://developers.google.com/maps/documentation/javascript/examples/polyline-simple.
 //code template comes from:https://developers.google.com/maps/documentation/javascript/examples/marker-accessibility.
+//url :https://rylee1999.github.io/geom99lab1/story/mystory.html.
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 3.5,
