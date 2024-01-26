@@ -1,34 +1,14 @@
 import { faBus } from "@fortawesome/free-solid-svg-icons";
-const parser = new DOMParser();
+import { faBus } from "@fortawesome/free-solid-svg-icons";
 
-async function initMap() {
-  // Request needed libraries.
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-    "marker",
-  );
-  const map = new Map(document.getElementById("map"), {
-    center: { lat: 37.419, lng: -122.02 },
-    zoom: 14,
-    mapId: "4504f8b37365c3d0",
+function initMap() {
+  const center = { lat: 36.6163, lng: -100.605 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center,
   });
-  // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
-  // Default marker with title text (no PinElement).
-  const markerViewWithText = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.03 },
-    title: "Title text for the marker at lat: 37.419, lng: -122.03",
-  });
-   // Change the glyph color.
-  const pinGlyph = new PinElement({
-    glyphColor: "white",
-  });
-  const markerViewGlyph = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.415, lng: -122.02 },
-    content: pinGlyph.element,
-  });
-   // use a FontAwesome svg
+
+  // use a FontAwesome svg
   new google.maps.Marker({
     position: { lat: 36.6163, lng: -100.61 },
     map,
@@ -46,6 +26,7 @@ async function initMap() {
     },
     title: "FontAwesome SVG Marker",
   });
-}
+  }
 
 window.initMap = initMap;
+  
