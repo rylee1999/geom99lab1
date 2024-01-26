@@ -1,13 +1,13 @@
-onst parser = new DOMParser();
+const parser = new DOMParser();
 
-async function initMap() { 
+async function initMap() {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
     "marker",
   );
   const map = new Map(document.getElementById("map"), {
-    center: { lat: 44.426, lng: -78.743 },
+    center: { lat: 37.419, lng: -122.02 },
     zoom: 14,
     mapId: "4504f8b37365c3d0",
   });
@@ -15,8 +15,8 @@ async function initMap() {
   // Default marker with title text (no PinElement).
   const markerViewWithText = new AdvancedMarkerElement({
     map,
-    position: { lat: 44.426, lng: -78.743 },
-    title: "Ken Reid Conservation Area",
+    position: { lat: 37.419, lng: -122.03 },
+    title: "Title text for the marker at lat: 37.419, lng: -122.03",
   });
   // Adjust the scale.
   const pinScaled = new PinElement({
@@ -66,4 +66,3 @@ async function initMap() {
 }
 
 initMap();
-  
