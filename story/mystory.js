@@ -8,7 +8,7 @@ async function initMap() {
   );
   const map = new Map(document.getElementById("map"), {
     center: { lat: 44.403, lng: -78.757 },
-    zoom: 9,
+    zoom: 12,
     mapId: "4504f8b37365c3d0",
   });
   // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
@@ -22,6 +22,14 @@ async function initMap() {
     map,
     position: { lat: 44.403, lng: -78.757 }, 
     content: pinGlyph.element,
+  });
+  
+  const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+  const beachMarker = new google.maps.Marker({
+    position: { lat: -33.89, lng: 151.274 },
+    map,
+    icon: image,
   });
  
 }
