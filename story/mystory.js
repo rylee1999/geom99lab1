@@ -16,7 +16,7 @@ function initMap() {
   const flightPath = new google.maps.Polyline({
     path: RyleesflightPathCoordinates,
     geodesic: true,
-    strokeColor: "#FF0000",
+    strokeColor: "#FFD700",
     strokeOpacity: 1.0,
     strokeWeight: 2,
   });
@@ -39,7 +39,7 @@ function initMap() {
       title: `${i + 1}. ${title}`,
       label: `${i + 1}`,
       optimized: false,
-      fillColor:"#FFD700",
+     
     });
 
     // Add a click listener for each marker, and set up the info window.
