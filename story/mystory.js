@@ -20,25 +20,14 @@ function initMap() {
   const infoWindow = new google.maps.InfoWindow();
 
   // Create the markers.
-   const pinGlyph = new PinElement({
-    glyphColor: "white",
-  });
   tourStops.forEach(([position, title], i) => {
-   const markerViewGlyph = new AdvancedMarkerElement({
+    const marker = new google.maps.Marker({
       position,
       map,
       title: `${i + 1}. ${title}`,
+      label: `${i + 1}`,
       optimized: false,
-      content: pinGlyph.element,
     });
-
-    // Add a click listener for each marker, and set up the info window.
-    marker.addListener("click", () => {
-      infoWindow.close();
-      infoWindow.setContent(marker.getTitle());
-      infoWindow.open(marker.getMap(), marker);
-    });
-  });
-}
+    }
 
 window.initMap = initMap;
