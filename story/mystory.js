@@ -1,34 +1,28 @@
-
-// The following example creates five accessible and
-// focusable markers.
+// This example creates a 2-pixel-wide red polyline showing the path of
+// the first trans-Pacific flight between Oakland, CA, and Brisbane,
+// Australia which was made by Charles Kingsford Smith.
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: { lat: 34.84555, lng: -111.8035 },
+    zoom: 3,
+    center: { lat: 0, lng: -180 },
+    mapTypeId: "terrain",
   });
-  // Set LatLng and title text for the markers. The first marker (Boynton Pass)
-  // receives the initial focus when tab is pressed. Use arrow keys to
-  // move between markers; press tab again to cycle through the map controls.
-  const tourStops = [
-    [{ lat: 34.8791806, lng: -111.8265049 }, "Boynton Pass"],
-    [{ lat: 34.8559195, lng: -111.7988186 }, "Airport Mesa"],
-    [{ lat: 34.832149, lng: -111.7695277 }, "Chapel of the Holy Cross"],
-    [{ lat: 34.823736, lng: -111.8001857 }, "Red Rock Crossing"],
-    [{ lat: 34.800326, lng: -111.7665047 }, "Bell Rock"],
+  const flightPlanCoordinates = [
+    { lat: 37.772, lng: -122.214 },
+    { lat: 21.291, lng: -157.821 },
+    { lat: -18.142, lng: 178.431 },
+    { lat: -27.467, lng: 153.027 },
   ];
-  // Create an info window to share between markers.
-  const infoWindow = new google.maps.InfoWindow();
+  const flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    geodesic: true,
+    strokeColor: "#FF0000",
+    strokeOpacity: 1.0,
+    strokeWeight: 2,
+  });
 
-  // Create the markers.
-  tourStops.forEach(([position, title], i) => {
-    const marker = new google.maps.Marker({
-      position,
-      map,
-      title: `${i + 1}. ${title}`,
-      label: `${i + 1}`,
-      optimized: false,
-    });
-
+  flightPath.setMap(map);
 }
+
 window.initMap = initMap;
 
