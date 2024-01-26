@@ -18,15 +18,7 @@ async function initMap() {
     position: { lat: 37.419, lng: -122.03 },
     title: "Title text for the marker at lat: 37.419, lng: -122.03",
   });
-  // Adjust the scale.
-  const pinScaled = new PinElement({
-    scale: 1.5,
-  });
-  const markerViewScaled = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.419, lng: -122.02 },
-    content: pinScaled.element,
-  });
+ 
   // Change the background color.
   const pinBackground = new PinElement({
     background: "#FBBC04",
