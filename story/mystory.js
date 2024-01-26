@@ -1,3 +1,4 @@
+
 // The following example creates five accessible and
 // focusable markers.
 function initMap() {
@@ -8,7 +9,7 @@ function initMap() {
   // Set LatLng and title text for the markers. The first marker (Boynton Pass)
   // receives the initial focus when tab is pressed. Use arrow keys to
   // move between markers; press tab again to cycle through the map controls.
-  const RyleesTourStops = [
+  const tourStops = [
     [{ lat: 34.8791806, lng: -111.8265049 }, "Boynton Pass"],
     [{ lat: 34.8559195, lng: -111.7988186 }, "Airport Mesa"],
     [{ lat: 34.832149, lng: -111.7695277 }, "Chapel of the Holy Cross"],
@@ -19,7 +20,7 @@ function initMap() {
   const infoWindow = new google.maps.InfoWindow();
 
   // Create the markers.
-  RyleesTourStops.forEach(([position, title], i) => {
+  tourStops.forEach(([position, title], i) => {
     const marker = new google.maps.Marker({
       position,
       map,
@@ -28,7 +29,13 @@ function initMap() {
       optimized: false,
     });
 
- 
+    // Add a click listener for each marker, and set up the info window.
+    marker.addListener("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(marker.getTitle());
+      infoWindow.open(marker.getMap(), marker);
+    });
+  });
 }
 
 window.initMap = initMap;
