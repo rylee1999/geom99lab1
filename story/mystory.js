@@ -1,6 +1,6 @@
 onst parser = new DOMParser();
 
-async function initMap() {
+async function initMap() { 
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
