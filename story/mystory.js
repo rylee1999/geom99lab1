@@ -3,8 +3,8 @@
 // Australia which was made by Charles Kingsford Smith.
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 3,
-    center: { lat: 0, lng: -180 },
+    zoom: 5,
+    center: { lat:52.299, lng: -0.943},
     mapTypeId: "terrain",
   });
   const flightPlanCoordinates = [
