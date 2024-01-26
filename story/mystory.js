@@ -37,15 +37,7 @@ async function initMap() {
     position: { lat: 37.415, lng: -122.02 },
     content: pinGlyph.element,
   });
-  // Hide the glyph.
-  const pinNoGlyph = new PinElement({
-    glyph: "",
-  });
-  const markerViewNoGlyph = new AdvancedMarkerElement({
-    map,
-    position: { lat: 37.415, lng: -122.01 },
-    content: pinNoGlyph.element,
-  });
+ 
 }
 
 initMap();
