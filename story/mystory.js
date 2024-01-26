@@ -1,48 +1,41 @@
-const parser = new DOMParser();
-import { faBus } from "@fortawesome/free-solid-svg-icons";
-async function initMap() {
-  // Request needed libraries.
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-    "marker",
-  );
-  const map = new Map(document.getElementById("map"), {
-    center: { lat: 44.403, lng: -78.757 },
-    zoom: 9,
-    mapId: "4504f8b37365c3d0",
+// The following example creates five accessible and
+// focusable markers.
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: { lat: 34.84555, lng: -111.8035 },
   });
-  // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
-  // Default marker with title text (no PinElement).
-
-  // Change the glyph color.
-  const pinGlyph = new PinElement({
-    glyphColor: "white",
-  });
-  const markerViewGlyph = new AdvancedMarkerElement({
-    map,
-    position: { lat: 44.403, lng: -78.757 }, 
-    content: pinGlyph.element,
-  });
+  // Set LatLng and title text for the markers. The first marker (Boynton Pass)
+  // receives the initial focus when tab is pressed. Use arrow keys to
+  // move between markers; press tab again to cycle through the map controls.
+  const tourStops = [
+    [{ lat: 34.8791806, lng: -111.8265049 }, "Boynton Pass"],
+    [{ lat: 34.8559195, lng: -111.7988186 }, "Airport Mesa"],
+    [{ lat: 34.832149, lng: -111.7695277 }, "Chapel of the Holy Cross"],
+    [{ lat: 34.823736, lng: -111.8001857 }, "Red Rock Crossing"],
+    [{ lat: 34.800326, lng: -111.7665047 }, "Bell Rock"],
+  ];
   
-   // use a FontAwesome svg
-  new google.maps.Marker({
-    position: { lat: 36.6163, lng: -100.61 },
-    map,
-    icon: {
-      path: faBus.icon[4],
-      fillColor: "#0000ff",
-      fillOpacity: 1,
-      anchor: new google.maps.Point(
-        faBus.icon[0] / 2, // width
-        faBus.icon[1], // height
-      ),
-      strokeWeight: 1,
-      strokeColor: "#ffffff",
-      scale: 0.075,
-    },
-    title: "FontAwesome SVG Marker",
+// Create an info window to share between markers.
+  const infoWindow = new google.maps.InfoWindow();
+
+  // Create the markers.
+  tourStops.forEach(([position, title], i) => {
+    const marker = new google.maps.Marker({
+      position,
+      map,
+      title: `${i + 1}. ${title}`,
+      label: `${i + 1}`,
+      optimized: false,
+    });
+
+    // Add a click listener for each marker, and set up the info window.
+    marker.addListener("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(marker.getTitle());
+      infoWindow.open(marker.getMap(), marker);
+    });
   });
- 
 }
 
-initMap();
+window.initMap = initMap;
