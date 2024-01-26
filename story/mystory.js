@@ -1,3 +1,4 @@
+import { faBus } from "@fortawesome/free-solid-svg-icons";
 const parser = new DOMParser();
 
 async function initMap() {
@@ -26,6 +27,24 @@ async function initMap() {
     map,
     position: { lat: 37.415, lng: -122.02 },
     content: pinGlyph.element,
+  });
+   // use a FontAwesome svg
+  new google.maps.Marker({
+    position: { lat: 36.6163, lng: -100.61 },
+    map,
+    icon: {
+      path: faBus.icon[4],
+      fillColor: "#0000ff",
+      fillOpacity: 1,
+      anchor: new google.maps.Point(
+        faBus.icon[0] / 2, // width
+        faBus.icon[1], // height
+      ),
+      strokeWeight: 1,
+      strokeColor: "#ffffff",
+      scale: 0.075,
+    },
+    title: "FontAwesome SVG Marker",
   });
 }
 
